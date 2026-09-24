@@ -6,6 +6,11 @@ Production-ready NestJS backend scaffolding by BlackAlphaLabs.
 
 Instead of repeatedly creating the same NestJS foundation, installing the same dependencies, configuring MongoDB, creating authentication modules, and preparing common backend modules, this CLI automates the process.
 
+## This Project work with NestJS 
+
+- NestJS Documentation (NestJS)[https://docs.nestjs.com/]
+- (NestJS)[https://nestjs.com/] 
+
 ```bash
 
 npx @blackalphalabs/create-nest-app my-project
