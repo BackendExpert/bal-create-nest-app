@@ -313,6 +313,8 @@ BlackAlphaLabs is a software development and research initiative focused on buil
 
 If this project is useful to you, consider giving the repository a ⭐ on GitHub.
 
+
+```
 ╔══════════════════════════════════════════════╗
 ║                                              ║
 ║       🚀 BlackAlphaLabs NestJS CLI           ║
@@ -320,5 +322,7 @@ If this project is useful to you, consider giving the repository a ⭐ on GitHub
 ║   Build once. Reuse across your projects.    ║
 ║                                              ║
 ╚══════════════════════════════════════════════╝
+
+```
 
 Built with ❤️ by [BlackAlphaLabs](https://www.blackalphalabs.com)
