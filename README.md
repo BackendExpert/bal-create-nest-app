@@ -2,7 +2,7 @@
 
 Production-ready NestJS backend scaffolding by BlackAlphaLabs.
 
-`@blackalphalabs/create-nest-app` is a custom CLI for generating NestJS backend applications using the reusable backend architecture developed by (BlackAlphaLabs)[https://www.blackalphalabs.com].
+`@blackalphalabs/create-nest-app` is a custom CLI for generating NestJS backend applications using the reusable backend architecture developed by [BlackAlphaLabs](https://www.blackalphalabs.com)
 
 Instead of repeatedly creating the same NestJS foundation, installing the same dependencies, configuring MongoDB, creating authentication modules, and preparing common backend modules, this CLI automates the process.
 
@@ -265,3 +265,60 @@ OLLAMA_URL=
 OLLAMA_MODEL=
 
 ```
+
+## 🧭 Development Philosophy
+
+The CLI follows several principles:
+
+♻️ Reusability
+
+Common backend functionality should not need to be manually recreated for every project.
+
+🧩 Modularity
+
+Features are organized into independent NestJS modules.
+
+🔐 Security
+
+Authentication, authorization, validation, security middleware, and auditing are treated as reusable backend concerns.
+
+⚡ Productivity
+
+The generator reduces repetitive project setup.
+
+🛠️ Maintainability
+
+The template is maintained independently from the CLI engine.
+
+🚀 Extensibility
+
+The architecture can evolve as new BlackAlphaLabs backend capabilities are developed.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+Copyright © [BlackAlphaLabs](https://www.blackalphalabs.com)
+
+## 👨‍💻 Author
+
+BlackAlphaLabs (Jehan Weerasuriya)
+
+BlackAlphaLabs is a software development and research initiative focused on building reusable software engineering tools, developer infrastructure, open-source packages, and application architectures.
+
+🌐 Website: https://www.blackalphalabs.com
+
+
+## ⭐ Support
+
+If this project is useful to you, consider giving the repository a ⭐ on GitHub.
+
+╔══════════════════════════════════════════════╗
+║                                              ║
+║       🚀 BlackAlphaLabs NestJS CLI           ║
+║                                              ║
+║   Build once. Reuse across your projects.    ║
+║                                              ║
+╚══════════════════════════════════════════════╝
+
+Built with ❤️ by [BlackAlphaLabs](https://www.blackalphalabs.com)
