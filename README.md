@@ -191,3 +191,77 @@ my-project/
 └── 📄 tsconfig.build.json
 
 ```
+
+## 🧩 Core Modules
+
+The template provides a reusable starting structure.
+
+```text
+
+                         ┌─────────────────┐
+                         │   NestJS App    │
+                         └────────┬────────┘
+                                  │
+        ┌─────────────────────────┼─────────────────────────┐
+        │                         │                         │
+        ▼                         ▼                         ▼
+   🔐 Authentication        👥 User Management       🛡️ Authorization
+        │                         │                         │
+        │                         │                  ┌──────┴──────┐
+        │                         │                  │             │
+        │                         │                  ▼             ▼
+        │                         │                Roles       Permissions
+        │                         │
+        └──────────────┬──────────┘
+                       │
+                       ▼
+                🍃 MongoDB
+                       │
+             ┌─────────┴─────────┐
+             ▼                   ▼
+          Mongoose             Database
+
+```
+
+Additional reusable services include:
+
+- 📋 Audit
+- 📧 Email
+- 🔔 Notifications
+- 👤 Profile
+- ⚙ ️ Configuration
+- 🛠️ Common utilities
+- 👑 Admin
+
+
+## ⚙️ Generated Environment
+
+The CLI generates a .env.example file using dynamic values.
+
+Template
+
+```env
+
+MONGO_URI=mongodb://127.0.0.1:27017/{{DATABASE_NAME}}
+
+PROJECT_NAME="{{PROJECT_NAME}}"
+
+JWT_SECRET=your_secret_key
+
+SESSION_SECRET=your_SESSION_SECRET
+
+PORT={{PORT}}
+
+BACKEND_SERVER=http://localhost:{{PORT}}
+
+NODE_ENV=development
+
+FRONTEND_URL=http://localhost:5173
+
+EMAIL_USER=
+EMAIL_PASSWORD=
+
+OLLAMA_URL=
+OLLAMA_MODEL=
+
+```
