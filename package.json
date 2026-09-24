@@ -14,12 +14,19 @@
     "nest",
     "cli",
     "generator",
-    "blackalphalabs"
+    "blackalphalabs",
+    "NestJS",
+    "Backend",
+    "Typescript",
+    "Javascript",
+    "TS",
+    "JS",
+    "Fullstack"
   ],
   "author": "backendexpert",
   "license": "ISC",
   "bin": {
-    "bal-nest": "./bin/cli.js"
+    "bal-nest": "bin/cli.js"
   },
   "files": [
     "bin",
