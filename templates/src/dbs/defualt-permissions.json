@@ -1,0 +1,137 @@
+[
+  {
+    "_id": {
+      "$oid": "6ab49cdc14d95ee68c9f47b8"
+    },
+    "name": "FETCH_MY_PROFILE",
+    "permission_values": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timezone": "Asia/Colombo",
+      "isActive": true,
+      "requiresApproval": false
+    },
+    "createdAt": {
+      "$date": "2026-09-24T03:45:32.719Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-24T03:45:32.719Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6ab49cff14d95ee68c9f47b9"
+    },
+    "name": "UPDATE_PROFILE",
+    "permission_values": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timezone": "Asia/Colombo",
+      "isActive": true,
+      "requiresApproval": false
+    },
+    "createdAt": {
+      "$date": "2026-09-24T03:46:07.852Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-24T03:46:07.852Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6ab49d0914d95ee68c9f47ba"
+    },
+    "name": "UPDATE_PASSWORD",
+    "permission_values": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timezone": "Asia/Colombo",
+      "isActive": true,
+      "requiresApproval": false
+    },
+    "createdAt": {
+      "$date": "2026-09-24T03:46:17.837Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-24T03:46:17.837Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6ab49d2f14d95ee68c9f47bb"
+    },
+    "name": "FETCH_NOTIFICATIONS",
+    "permission_values": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timezone": "Asia/Colombo",
+      "isActive": true,
+      "requiresApproval": false
+    },
+    "createdAt": {
+      "$date": "2026-09-24T03:46:55.966Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-24T03:46:55.966Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6ab49d3814d95ee68c9f47bc"
+    },
+    "name": "READ_NOTIFICATIONS",
+    "permission_values": {
+      "daysOfWeek": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timezone": "Asia/Colombo",
+      "isActive": true,
+      "requiresApproval": false
+    },
+    "createdAt": {
+      "$date": "2026-09-24T03:47:04.519Z"
+    },
+    "updatedAt": {
+      "$date": "2026-09-24T03:47:04.519Z"
+    },
+    "__v": 0
+  }
+]

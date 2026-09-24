@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "6ab483292239728265f4c503"
+  },
+  "role": "SUPER_ADMIN",
+  "permissions": [],
+  "createdAt": {
+    "$date": "2026-09-24T01:55:53.716Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T01:55:53.716Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab483292239728265f4c504"
+  },
+  "role": "GUEST",
+  "permissions": [
+    {
+      "$oid": "6ab4986b14d95ee68c9f47b0"
+    }
+  ],
+  "createdAt": {
+    "$date": "2026-09-24T01:55:53.716Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T03:32:02.984Z"
+  },
+  "__v": 3
+},
+{
+  "_id": {
+    "$oid": "6ab4962723eff6caa969669b"
+  },
+  "role": "STAFF",
+  "permissions": [
+    {
+      "$oid": "6ab49cdc14d95ee68c9f47b8"
+    },
+    {
+      "$oid": "6ab49cff14d95ee68c9f47b9"
+    },
+    {
+      "$oid": "6ab49d0914d95ee68c9f47ba"
+    },
+    {
+      "$oid": "6ab49d2f14d95ee68c9f47bb"
+    },
+    {
+      "$oid": "6ab49d3814d95ee68c9f47bc"
+    }
+  ],
+  "createdAt": {
+    "$date": "2026-09-24T03:16:55.973Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T03:50:38.038Z"
+  },
+  "__v": 1
+}]

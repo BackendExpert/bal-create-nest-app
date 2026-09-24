@@ -1,0 +1,45 @@
+{
+  "name": "@blackalphalabs/create-nest-app",
+  "version": "1.0.0",
+  "description": "Create production-ready NestJS applications with the BlackAlphaLabs architecture.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "start": "node bin/cli.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "nestjs",
+    "nest",
+    "cli",
+    "generator",
+    "blackalphalabs"
+  ],
+  "author": "backendexpert",
+  "license": "ISC",
+  "bin": {
+    "bal-nest": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "templates"
+  ],
+  "type": "module",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^26.6.2",
+    "@types/prompts": "^2.4.9",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "commander": "^15.0.0",
+    "fs-extra": "^11.4.1",
+    "prompts": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
