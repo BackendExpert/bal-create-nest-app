@@ -73,3 +73,121 @@ The CLI will ask:
 ```
 
 - The generated project will then be ready for development.
+
+
+## 🧠 How It Works
+
+The CLI does not simply copy a folder.
+
+It follows a controlled generation process.
+
+```text
+
+                    👨‍💻 Developer
+                         │
+                         │
+                         ▼
+        npx @blackalphalabs/create-nest-app
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │ BlackAlphaLabs CLI  │
+              └──────────┬──────────┘
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │ Create NestJS App   │
+              │ using Nest CLI      │
+              └──────────┬──────────┘
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │ Apply B​lackAlphaLabs│
+              │ Backend Template    │
+              └──────────┬──────────┘
+                         │
+             ┌───────────┼───────────┐
+             ▼           ▼           ▼
+          📁 src/    📦 package   ⚙️ .env
+                       .json
+             │           │           │
+             └───────────┼───────────┘
+                         ▼
+               🔄 Replace Variables
+                         │
+                         ▼
+                  📥 npm install
+                         │
+                         ▼
+                  ✅ Ready Project
+
+```
+
+
+## 🔄 Generation Process
+
+The complete generation lifecycle is:
+
+| Step | Operation                            |
+| ---- | ------------------------------------ |
+| 1️⃣  | Receive project configuration        |
+| 2️⃣  | Validate project name                |
+| 3️⃣  | Validate MongoDB database name       |
+| 4️⃣  | Validate backend port                |
+| 5️⃣  | Create standard NestJS project       |
+| 6️⃣  | Apply BlackAlphaLabs `src/` template |
+| 7️⃣  | Apply BlackAlphaLabs `package.json`  |
+| 8️⃣  | Apply `.env.example`                 |
+| 9️⃣  | Replace template variables           |
+| 🔟   | Install dependencies                 |
+| ✅    | Project ready                        |
+
+
+## 🏗️ Generated Architecture
+
+- A generated project follows the BlackAlphaLabs modular backend structure.
+
+
+```
+
+my-project/
+│
+├── 📁 src/
+│   │
+│   ├── 📁 admin/
+│   │
+│   ├── 📁 audit/
+│   │
+│   ├── 📁 auth/
+│   │
+│   ├── 📁 common/
+│   │
+│   ├── 📁 config/
+│   │
+│   ├── 📁 database/
+│   │
+│   ├── 📁 email/
+│   │
+│   ├── 📁 notifications/
+│   │
+│   ├── 📁 profile/
+│   │
+│   ├── 📁 role/
+│   │
+│   ├── 📁 user/
+│   │
+│   ├── 📄 app.controller.spec.ts
+│   ├── 📄 app.controller.ts
+│   ├── 📄 app.module.ts
+│   ├── 📄 app.service.ts
+│   └── 📄 main.ts
+│
+├── 📁 dbs/
+│
+├── 📄 .env.example
+├── 📄 package.json
+├── 📄 nest-cli.json
+├── 📄 tsconfig.json
+└── 📄 tsconfig.build.json
+
+```
