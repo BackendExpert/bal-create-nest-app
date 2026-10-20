@@ -81,6 +81,7 @@ The CLI will ask:
 √ Project name: ... my-project
 √ MongoDB database name: ... my_database
 √ Backend port: ... 3000
+√ Enable multi-factor authentication (MFA)? ... yes
 √ Install dependencies? ... yes
 
 ```
