@@ -141,7 +141,7 @@ It follows a controlled generation process.
 
 The CLI does not simply copy a folder.
 
-It follows a controlled generation process.
+It follows a controlled generation process with MFA.
 
 ```text
                     👨‍💻 Developer
@@ -204,6 +204,26 @@ The complete generation lifecycle is:
 | 9️⃣  | Replace template variables           |
 | 🔟   | Install dependencies                 |
 | ✅    | Project ready                        |
+
+
+## 🔄 Generation Process (v2.0.0)
+
+The complete generation lifecycle is:
+
+| Step | Operation |
+| ---- | ------------------------------------ |
+| 1️⃣ | Receive project configuration |
+| 2️⃣ | Validate project name |
+| 3️⃣ | Validate MongoDB database name |
+| 4️⃣ | Validate backend port |
+| 5️⃣ | Configure MFA option |
+| 6️⃣ | Create standard NestJS project |
+| 7️⃣ | Apply BlackAlphaLabs `src/` template based on MFA selection |
+| 8️⃣ | Apply BlackAlphaLabs `package.json` |
+| 9️⃣ | Apply `.env.example` |
+| 🔟 | Replace template variables |
+| 1️⃣1️⃣ | Install dependencies (optional) |
+| ✅ | Project ready |
 
 
 ## 🏗️ Generated Architecture
@@ -293,6 +313,45 @@ Additional reusable services include:
 - 🔔 Notifications
 - 👤 Profile
 - ⚙ ️ Configuration
+- 🛠️ Common utilities
+- 👑 Admin
+
+
+## 🧩 Core Modules (v2.0.0)
+
+The template provides a reusable starting structure with authentication, user management, authorization, and optional multi-factor authentication (MFA).
+
+```text
+                         ┌─────────────────┐
+                         │   NestJS App    │
+                         └────────┬────────┘
+                                  │
+        ┌─────────────────────────┼─────────────────────────┐
+        │                         │                         │
+        ▼                         ▼                         ▼
+ 🔐 Authentication         👥 User Management        🛡️ Authorization
+        │                         │                         │
+        ▼                         │                  ┌──────┴──────┐
+ 🔑 MFA Support                    │                  ▼             ▼
+        │                         │                Roles       Permissions
+        │                         │                  │             │
+        └─────────────────────────┼──────────────────┘
+                                  │
+                                  ▼
+                            🍃 MongoDB
+                                  │
+                       ┌──────────┴──────────┐
+                       ▼                     ▼
+                   Mongoose               Database
+```
+
+Additional reusable services include:
+
+- 📋 Audit
+- 📧 Email
+- 🔔 Notifications
+- 👤 Profile
+- ⚙️ Configuration
 - 🛠️ Common utilities
 - 👑 Admin
 
