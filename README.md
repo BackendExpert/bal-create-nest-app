@@ -4,12 +4,12 @@ Production-ready NestJS backend scaffolding by BlackAlphaLabs.
 
 `@blackalphalabs/create-nest-app` is a custom CLI for generating NestJS backend applications using the reusable backend architecture developed by [BlackAlphaLabs](https://www.blackalphalabs.com)
 
-Instead of repeatedly creating the same NestJS foundation, installing the same dependencies, configuring MongoDB, creating authentication modules, and preparing common backend modules, this CLI automates the process.
+Instead of repeatedly creating the same NestJS foundation, installing the same dependencies, configuring MongoDB, creating authentication modules, and preparing common backend modules, this CLI automates the process with including the MFA (As Authentication APP).
 
 ## This Project work with NestJS 
 
-- NestJS Documentation (NestJS)[https://docs.nestjs.com/]
-- (NestJS)[https://nestjs.com/] 
+- [NestJS Documentation (NestJS)](https://docs.nestjs.com/)
+- [NestJS](https://nestjs.com/) 
 
 ```bash
 
@@ -40,6 +40,14 @@ The CLI first creates a standard NestJS project and then applies the BlackAlphaL
 | 🧩 Modular            | Feature-based NestJS module structure            |
 | 🚀 Fast Setup         | Create a backend foundation with one command     |
 | 🧪 Local Testing      | Test the npm package without publishing          |
+
+### V2.0.0 - 20 October 2026
+
+| Feature | Description |
+| --------------------- | ------------------------------------------------ |
+| 🏗️ NestJS App Generator | Automatically creates a new NestJS application |
+| 🔐 MFA Support | Optionally enables multi-factor authentication |
+
 
 ## 🚀 Quick Start
 
@@ -73,6 +81,7 @@ The CLI will ask:
 √ Project name: ... my-project
 √ MongoDB database name: ... my_database
 √ Backend port: ... 3000
+√ Enable multi-factor authentication (MFA)? ... yes
 √ Install dependencies? ... yes
 
 ```
@@ -128,6 +137,55 @@ It follows a controlled generation process.
 
 ```
 
+## 🧠 How It Works (v2.0.0)
+
+The CLI does not simply copy a folder.
+
+It follows a controlled generation process with MFA.
+
+```text
+                    👨‍💻 Developer
+                         │
+                         ▼
+        npx @blackalphalabs/create-nest-app
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │ BlackAlphaLabs CLI  │
+              └──────────┬──────────┘
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │ Create NestJS App   │
+              │ using Nest CLI      │
+              └──────────┬──────────┘
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │ Apply BlackAlphaLabs│
+              │ Backend Template    │
+              └──────────┬──────────┘
+                         │
+              ┌──────────┼──────────┐
+              ▼          ▼          ▼
+           📁 src/    📦 package   ⚙️ .env
+                         .json
+              │          │          │
+              └──────────┼──────────┘
+                         ▼
+                🔐 Configure MFA
+                         │
+                         ▼
+                🔄 Replace Variables
+                         │
+                         ▼
+                   📥 npm install
+                         │
+                         ▼
+                  ✅ Ready Project
+```
+
+
 
 ## 🔄 Generation Process
 
@@ -146,6 +204,26 @@ The complete generation lifecycle is:
 | 9️⃣  | Replace template variables           |
 | 🔟   | Install dependencies                 |
 | ✅    | Project ready                        |
+
+
+## 🔄 Generation Process (v2.0.0)
+
+The complete generation lifecycle is:
+
+| Step | Operation |
+| ---- | ------------------------------------ |
+| 1️⃣ | Receive project configuration |
+| 2️⃣ | Validate project name |
+| 3️⃣ | Validate MongoDB database name |
+| 4️⃣ | Validate backend port |
+| 5️⃣ | Configure MFA option |
+| 6️⃣ | Create standard NestJS project |
+| 7️⃣ | Apply BlackAlphaLabs `src/` template based on MFA selection |
+| 8️⃣ | Apply BlackAlphaLabs `package.json` |
+| 9️⃣ | Apply `.env.example` |
+| 🔟 | Replace template variables |
+| 1️⃣1️⃣ | Install dependencies (optional) |
+| ✅ | Project ready |
 
 
 ## 🏗️ Generated Architecture
@@ -235,6 +313,45 @@ Additional reusable services include:
 - 🔔 Notifications
 - 👤 Profile
 - ⚙ ️ Configuration
+- 🛠️ Common utilities
+- 👑 Admin
+
+
+## 🧩 Core Modules (v2.0.0)
+
+The template provides a reusable starting structure with authentication, user management, authorization, and optional multi-factor authentication (MFA).
+
+```text
+                         ┌─────────────────┐
+                         │   NestJS App    │
+                         └────────┬────────┘
+                                  │
+        ┌─────────────────────────┼─────────────────────────┐
+        │                         │                         │
+        ▼                         ▼                         ▼
+ 🔐 Authentication         👥 User Management        🛡️ Authorization
+        │                         │                         │
+        ▼                         │                  ┌──────┴──────┐
+ 🔑 MFA Support                    │                  ▼             ▼
+        │                         │                Roles       Permissions
+        │                         │                  │             │
+        └─────────────────────────┼──────────────────┘
+                                  │
+                                  ▼
+                            🍃 MongoDB
+                                  │
+                       ┌──────────┴──────────┐
+                       ▼                     ▼
+                   Mongoose               Database
+```
+
+Additional reusable services include:
+
+- 📋 Audit
+- 📧 Email
+- 🔔 Notifications
+- 👤 Profile
+- ⚙️ Configuration
 - 🛠️ Common utilities
 - 👑 Admin
 

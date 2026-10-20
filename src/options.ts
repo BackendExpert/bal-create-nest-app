@@ -3,4 +3,5 @@ export interface ProjectOptions {
     databaseName: string;
     port: number;
     install: boolean;
+    mfaEnabled: boolean;
 }
