@@ -9,7 +9,7 @@ Instead of repeatedly creating the same NestJS foundation, installing the same d
 ## This Project work with NestJS 
 
 - [NestJS Documentation (NestJS)](https://docs.nestjs.com/)
-- (NestJS)[https://nestjs.com/] 
+- [NestJS](https://nestjs.com/) 
 
 ```bash
 
@@ -40,6 +40,14 @@ The CLI first creates a standard NestJS project and then applies the BlackAlphaL
 | 🧩 Modular            | Feature-based NestJS module structure            |
 | 🚀 Fast Setup         | Create a backend foundation with one command     |
 | 🧪 Local Testing      | Test the npm package without publishing          |
+
+### V2.0.0 - 20 October 2026
+
+| Feature | Description |
+| --------------------- | ------------------------------------------------ |
+| 🏗️ NestJS App Generator | Automatically creates a new NestJS application |
+| 🔐 MFA Support | Optionally enables multi-factor authentication |
+
 
 ## 🚀 Quick Start
 
