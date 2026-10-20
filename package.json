@@ -1,6 +1,6 @@
 {
   "name": "@blackalphalabs/create-nest-app",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Create production-ready NestJS applications with the BlackAlphaLabs architecture.",
   "main": "index.js",
   "scripts": {

@@ -1,3 +1,4 @@
+
 import fs from "fs-extra";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -12,7 +13,8 @@ export async function generateProject(options: ProjectOptions) {
         projectName,
         databaseName,
         port,
-        install
+        install,
+        mfaEnabled
     } = options;
 
     const targetDirectory = path.resolve(process.cwd(), projectName);
@@ -39,12 +41,18 @@ export async function generateProject(options: ProjectOptions) {
     console.log(`Project: ${projectName}`);
     console.log(`Database: ${databaseName}`);
     console.log(`Port: ${port}`);
+    console.log(`MFA: ${mfaEnabled ? "Enabled" : "Disabled"}`);
     console.log("");
 
     const templateDirectory = path.resolve(__dirname, "../templates");
 
+    const sourceDirectory = path.join(
+        templateDirectory,
+        mfaEnabled ? "src-mfa" : "src"
+    );
+
     await fs.copy(
-        path.join(templateDirectory, "src"),
+        sourceDirectory,
         path.join(targetDirectory, "src"),
         {
             overwrite: true
@@ -72,7 +80,8 @@ export async function generateProject(options: ProjectOptions) {
         {
             PROJECT_NAME: projectName,
             DATABASE_NAME: databaseName,
-            PORT: String(port)
+            PORT: String(port),
+            MFA_ENABLED: String(mfaEnabled)
         }
     );
 
@@ -125,7 +134,10 @@ async function replaceTemplateVariables(
         for (const [key, value] of Object.entries(variables)) {
             const placeholder = `{{${key}}}`;
 
-            updatedContent = updatedContent.replaceAll(placeholder, value);
+            updatedContent = updatedContent.replaceAll(
+                placeholder,
+                value
+            );
         }
 
         if (updatedContent !== content) {
@@ -135,25 +147,17 @@ async function replaceTemplateVariables(
 }
 
 async function getFiles(directory: string): Promise<string[]> {
-    const entries = await fs.readdir(
-        directory,
-        {
-            withFileTypes: true
-        }
-    );
+    const entries = await fs.readdir(directory, {
+        withFileTypes: true
+    });
 
     const files: string[] = [];
 
     for (const entry of entries) {
-        const fullPath = path.join(
-            directory,
-            entry.name
-        );
+        const fullPath = path.join(directory, entry.name);
 
         if (entry.isDirectory()) {
-            files.push(
-                ...(await getFiles(fullPath))
-            );
+            files.push(...(await getFiles(fullPath)));
         } else {
             files.push(fullPath);
         }
