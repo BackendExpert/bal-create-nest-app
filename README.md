@@ -137,6 +137,55 @@ It follows a controlled generation process.
 
 ```
 
+## 🧠 How It Works (v2.0.0)
+
+The CLI does not simply copy a folder.
+
+It follows a controlled generation process.
+
+```text
+                    👨‍💻 Developer
+                         │
+                         ▼
+        npx @blackalphalabs/create-nest-app
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │ BlackAlphaLabs CLI  │
+              └──────────┬──────────┘
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │ Create NestJS App   │
+              │ using Nest CLI      │
+              └──────────┬──────────┘
+                         │
+                         ▼
+              ┌─────────────────────┐
+              │ Apply BlackAlphaLabs│
+              │ Backend Template    │
+              └──────────┬──────────┘
+                         │
+              ┌──────────┼──────────┐
+              ▼          ▼          ▼
+           📁 src/    📦 package   ⚙️ .env
+                         .json
+              │          │          │
+              └──────────┼──────────┘
+                         ▼
+                🔐 Configure MFA
+                         │
+                         ▼
+                🔄 Replace Variables
+                         │
+                         ▼
+                   📥 npm install
+                         │
+                         ▼
+                  ✅ Ready Project
+```
+
+
 
 ## 🔄 Generation Process
 
